@@ -1,7 +1,6 @@
 from flask import Flask, render_template, request
 import requests
 
-
 app = Flask(__name__)
 template_folder = 'template'
 
@@ -22,8 +21,12 @@ def result():
 
     response = requests.get(url).json()
 
+    data = response['list']
 
-    print(response)
+    dt = response.get("list")[1].get("main")
+
+    print(dt)
+
     return render_template('result.html')
 
 
