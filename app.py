@@ -17,34 +17,67 @@ def result():
     form_city = form_city.replace(" ", "")
     url = ("https://api.openweathermap.org/data/2.5/forecast?q=" + form_city + "&appid=" + api_key)
     response = requests.get(url).json()
-    weather_disc = response.get("list")[0].get("weather")[0].get('description')
+    weather_disc = response.get("list")[0].get("weather")[0].get('icon')
 
-    if weather_disc == "broken clouds":
-        weather_icon = "brokenclouds.png"
+    print(weather_disc)
 
-    elif weather_disc == "clear sky":
-        weather_icon = "clearsky.png"
 
-    elif weather_disc == "few clouds":
-        weather_icon = "fewclouds.png"
 
-    elif weather_disc == "scattered clouds":
-        weather_icon = "scatteredclouds.png"
+    if weather_disc == "04d":
+        weather_icon = "04d.png"
 
-    elif weather_disc == "shower rain":
-        weather_icon = ""
+    elif weather_disc == "01d":
+        weather_icon = "01d.png"
 
-    elif weather_disc == "rain":
-        weather_icon = ""
+    elif weather_disc == "02d":
+        weather_icon = "02d.png"
 
-    elif weather_disc == "thunderstorm":
-        weather_icon = ""
+    elif weather_disc == "03d":
+        weather_icon = "03d.png"
 
-    elif weather_disc == "snow":
-        weather_icon = ""
+    elif weather_disc == "09d":
+        weather_icon = "09d.png"
 
-    elif weather_disc == "mist":
-        weather_icon = ""
+    elif weather_disc == "10d":
+        weather_icon = "10d.png"
+
+    elif weather_disc == "11d":
+        weather_icon = "11d.png"
+
+    elif weather_disc == "13d":
+        weather_icon = "13d.png"
+
+    elif weather_disc == "50d":
+        weather_icon = "50d.png"
+
+    elif weather_disc == "01n":
+        weather_icon = "01n.png"
+
+    elif weather_disc == "02n":
+        weather_icon = "02n.png"
+
+    elif weather_disc == "03n":
+        weather_icon = "03n.png"
+
+    elif weather_disc == "04n":
+        weather_icon = "04d.png"
+
+    elif weather_disc == "09n":
+        weather_icon = "09n.png"
+
+    elif weather_disc == "10n":
+        weather_icon = "10n.png"
+
+    elif weather_disc == "11n":
+        weather_icon = "11n.png"
+
+    elif weather_disc == "13n":
+        weather_icon = "13n.png"
+
+    elif weather_disc == "50n":
+        weather_icon = "50n.png"
+
+
 
     return render_template('result.html', weather_icon=weather_icon)
 
