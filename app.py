@@ -23,9 +23,14 @@ def result():
 
     data = response['list']
 
-    dt = response.get("list")[1].get("main")
+    weather_disc = response.get("list")[0].get("weather")[0].get('description')
 
-    print(dt)
+    print(weather_disc)
+
+    if weather_disc == "overcast clouds":
+        weather_icon =
+
+    print(response)
 
     return render_template('result.html')
 
