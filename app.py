@@ -16,23 +16,37 @@ def result():
     form_city = request.form.get('city')
     form_city = form_city.replace(" ", "")
     url = ("https://api.openweathermap.org/data/2.5/forecast?q=" + form_city + "&appid=" + api_key)
-
-    print(url)
-
     response = requests.get(url).json()
-
-    data = response['list']
-
     weather_disc = response.get("list")[0].get("weather")[0].get('description')
 
-    print(weather_disc)
+    if weather_disc == "broken clouds":
+        weather_icon = "brokenclouds.png"
 
-    if weather_disc == "overcast clouds":
-        weather_icon =
+    elif weather_disc == "clear sky":
+        weather_icon = "clearsky.png"
 
-    print(response)
+    elif weather_disc == "few clouds":
+        weather_icon = "fewclouds.png"
 
-    return render_template('result.html')
+    elif weather_disc == "scattered clouds":
+        weather_icon = "scatteredclouds.png"
+
+    elif weather_disc == "shower rain":
+        weather_icon = ""
+
+    elif weather_disc == "rain":
+        weather_icon = ""
+
+    elif weather_disc == "thunderstorm":
+        weather_icon = ""
+
+    elif weather_disc == "snow":
+        weather_icon = ""
+
+    elif weather_disc == "mist":
+        weather_icon = ""
+
+    return render_template('result.html', weather_icon=weather_icon)
 
 
 if __name__ == '__main__':
