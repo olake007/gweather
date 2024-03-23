@@ -11,10 +11,12 @@
   <div class="card-body">
       <div class="row">
           <div class="col">
-              <img src="{{ url_for('static',filename=weather_icon) }}">
+              <img src="{{ url_for('static',filename=weather_icon1) }}">
+              {{ weatherinfo_dict.temp_c }}°
           </div>
           <div class="col">
-              Column
+              Weather
+              {{ weatherinfo_dict.dt }}
           </div>
       </div>
       <div class="row">
@@ -33,22 +35,19 @@
       </div>
       <div class="row">
           <div class="col">
-              Column
+              <img src="{{ url_for('static',filename=weather_icon1) }}">
           </div>
           <div class="col">
-              Column
+              <img src="{{ url_for('static',filename=weather_icon2) }}">
           </div>
           <div class="col">
-              Column
+              <img src="{{ url_for('static',filename=weather_icon3) }}">
           </div>
           <div class="col">
-              Column
+              <img src="{{ url_for('static',filename=weather_icon4) }}">
           </div>
           <div class="col">
-              Column
-          </div>
-          <div class="col">
-              Column
+              <img src="{{ url_for('static',filename=weather_icon5) }}">
           </div>
       </div>
 
